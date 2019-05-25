@@ -1,5 +1,5 @@
 const Discord = require("discord.js");
-const bot = require ("./index.js");
+const client = require ("./index.js");
 const config = require("./config.json");
 const PREFIX = 'p!';
 bot.on("message", async message => {
@@ -11,7 +11,7 @@ bot.on("message", async message => {
   
   if(command === "ping") {
     const m = await message.channel.send("Ping?");
-    m.edit(`Pong! Latency is ${m.createdTimestamp - message.createdTimestamp}ms. API Latency is ${Math.round(bot.ping)}ms`);
+    m.edit(`Pong! Latency is ${m.createdTimestamp - message.createdTimestamp}ms. API Latency is ${Math.round(client.ping)}ms`);
   }
   
   if(command === "say") {
