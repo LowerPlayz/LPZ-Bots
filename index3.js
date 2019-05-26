@@ -1,6 +1,5 @@
 const Discord = require("discord.js");
 const bot = require ("./index.js");
-const config = require("./config.json");
 const PREFIX = 'p!';
 bot.on("message", async message => {
   if(message.author.bot) return;
