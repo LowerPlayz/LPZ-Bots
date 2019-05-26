@@ -5,7 +5,6 @@ const index3 = require("./index3.js");
 
 const PREFIX = 'p!';
 var version = '0.0.1';
-const token = 'NTgxNzMwMzI0ODkyMDkwMzY4.XOn2Nw.gREDai46gFa3DELLpq8OyhG0YCY';
 bot.on('ready', () =>{
     console.log('This bot is online!');
     bot.user.setActivity('Half Life 3 (p!help)')
@@ -54,4 +53,4 @@ bot.on('message', message=>{
     }
 })
 
-bot.login(token);
+bot.login(process.env.token);
