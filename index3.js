@@ -1,5 +1,5 @@
 const Discord = require("discord.js");
-const client = require ("./index.js");
+const bot = require ("./index.js");
 const config = require("./config.json");
 const PREFIX = 'p!';
 bot.on("message", async message => {
@@ -11,7 +11,7 @@ bot.on("message", async message => {
   
   if(command === "ping") {
     const m = await message.channel.send("Ping?");
-    m.edit(`Pong! Latency is ${m.createdTimestamp - message.createdTimestamp}ms. API Latency is ${Math.round(client.ping)}ms`);
+    m.edit(`Pong! Latency is ${m.createdTimestamp - message.createdTimestamp}ms. API Latency is ${Math.round(bot.ping)}ms`);
   }
   
   if(command === "say") {
@@ -21,7 +21,6 @@ bot.on("message", async message => {
   }
   
   if(command === "kick") {
-    // https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Global_Objects/Array/some?
     if(!message.member.roles.some(r=>["Admins", "Moderators", "Bots", "Youtubers", "Owner"].includes(r.name)) )
       return message.reply("Sorry, you don't have permissions to use this!");
     

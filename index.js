@@ -1,17 +1,17 @@
 const Discord = require('discord.js');
-const client = new Discord.Client();
-module.exports = client;
+const bot = new Discord.Client();
+module.exports = bot;
 const index3 = require("./index3.js");
 
 const PREFIX = 'p!';
 var version = '0.0.1';
-
-client.on('ready', () =>{
+const token = 'NTgxNzMwMzI0ODkyMDkwMzY4.XOn2Nw.gREDai46gFa3DELLpq8OyhG0YCY';
+bot.on('ready', () =>{
     console.log('This bot is online!');
-    client.user.setActivity('Half Life 3(p!help for commands)')
+    bot.user.setActivity('Half Life 3 (p!help)')
 })
 
-client.on('guildMemberAdd', member =>{
+bot.on('guildMemberAdd', member =>{
 
     const channel = member.guild.channels.find(channel => channel.name === "welcome-byes");
     if(!channel) return;
@@ -19,7 +19,7 @@ client.on('guildMemberAdd', member =>{
     channel.send(`Welcome to the server, ${member}`)
 });
 
-client.on('message', message=>{
+bot.on('message', message=>{
     
     let args = message.content.substring(PREFIX.length).split(" ");
 
@@ -54,4 +54,4 @@ client.on('message', message=>{
     }
 })
 
-client.login(process.env.BOT_TOKEN);
+bot.login(token);
