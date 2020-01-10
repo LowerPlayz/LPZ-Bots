@@ -7,7 +7,7 @@ const PREFIX = 'p!';
 var version = '0.0.1';
 bot.on('ready', () =>{
     console.log('This bot is online!');
-    bot.user.setActivity('Half Life 3 (p!help)')
+    bot.user.setActivity('Bots World(p!help)')
 })
 
 bot.on('guildMemberAdd', member =>{
