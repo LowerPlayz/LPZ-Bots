@@ -1,6 +1,12 @@
 const Discord = require("discord.js");
 const bot = require ("./index.js");
 const PREFIX = 'p!';
+bot.on("message", async message => {
+  if(message.author.bot) return;
+  
+  if(message.content.indexOf(PREFIX) !== 0) return;
+  const args = message.content.slice(PREFIX.length).trim().split(/ +/g);
+  const command = args.shift().toLowerCase();
   
   if(command === "ping") {
     const m = await message.channel.send("Ping?");
